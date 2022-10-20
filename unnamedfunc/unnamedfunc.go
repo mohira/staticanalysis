@@ -35,8 +35,9 @@ func run(pass *analysis.Pass) (any, error) {
 				isUnnamed = true
 			}
 		}
+
 		if isUnnamed {
-			pass.Reportf(f.Pos(), "発見！ 名前無し引数を使ったパッケージ関数")
+			pass.Reportf(f.Pos(), "%s 名前無し引数を使った関数", f.Name.Name)
 		}
 	})
 
